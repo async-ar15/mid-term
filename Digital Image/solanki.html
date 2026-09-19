@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DIP Mid-Sem Notes</title>
+<style>
+:root{
+  --bg:#ffffff; --fg:#1a1c1e; --muted:#5b6166; --line:#e3e6e8;
+  --accent:#1f5fa9; --accent-soft:#eaf1fa;
+  --red:#b3261e; --red-soft:#fdecea;
+  --green:#1d6f42; --green-soft:#e9f5ee;
+  --code-bg:#f5f6f7;
+  --max:900px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#15171a; --fg:#e6e8ea; --muted:#a0a7ad; --line:#2c3035;
+    --accent:#7fb0e8; --accent-soft:#1b2734;
+    --red:#f2857c; --red-soft:#2e1f1e;
+    --green:#7fcfa0; --green-soft:#17261d;
+    --code-bg:#1d2024;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#15171a; --fg:#e6e8ea; --muted:#a0a7ad; --line:#2c3035;
+  --accent:#7fb0e8; --accent-soft:#1b2734;
+  --red:#f2857c; --red-soft:#2e1f1e;
+  --green:#7fcfa0; --green-soft:#17261d;
+  --code-bg:#1d2024;
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--bg); color:var(--fg);
+  font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  padding:0 16px;
+}
+.wrap{max-width:var(--max); margin:0 auto; padding:40px 0 80px}
+header.top{border-bottom:2px solid var(--line); padding-bottom:20px; margin-bottom:28px}
+h1{font-size:30px; margin:0 0 6px; letter-spacing:-.02em}
+.sub{color:var(--muted); font-size:14px; margin:0}
+h2{
+  font-size:22px; margin:44px 0 14px; padding:8px 0 8px 12px;
+  border-left:4px solid var(--accent); background:var(--accent-soft);
+  letter-spacing:-.01em;
+}
+h3{font-size:18px; margin:28px 0 8px; color:var(--accent)}
+h4{font-size:15px; margin:18px 0 6px; text-transform:uppercase; letter-spacing:.05em; color:var(--muted)}
+p{margin:8px 0}
+ul,ol{margin:8px 0 8px 0; padding-left:22px}
+li{margin:4px 0}
+code,.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size:.93em}
+.eq{
+  background:var(--code-bg); border:1px solid var(--line); border-radius:6px;
+  padding:10px 14px; margin:12px 0; overflow-x:auto;
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size:14px;
+}
+.eq.key{border-left:4px solid var(--accent)}
+.imp{
+  background:var(--red-soft); border:1px solid var(--red); border-radius:6px;
+  padding:10px 14px; margin:14px 0;
+}
+.imp .tag{
+  display:inline-block; font-size:11px; font-weight:700; letter-spacing:.08em;
+  color:var(--red); text-transform:uppercase; margin-bottom:4px;
+}
+.note{
+  background:var(--green-soft); border-left:4px solid var(--green);
+  padding:10px 14px; margin:14px 0; border-radius:0 6px 6px 0;
+}
+table{border-collapse:collapse; width:100%; margin:14px 0; font-size:15px}
+th,td{border:1px solid var(--line); padding:7px 10px; text-align:left; vertical-align:top}
+th{background:var(--code-bg); font-weight:600}
+.matrix{display:inline-block; vertical-align:middle; margin:6px 10px 6px 0}
+.matrix table{width:auto; margin:0; border:none}
+.matrix td{border:none; padding:2px 9px; text-align:center; font-family:ui-monospace,monospace}
+.matrix .brk{border-left:2px solid var(--fg); border-right:2px solid var(--fg); border-radius:3px}
+.mrow{display:flex; flex-wrap:wrap; align-items:center; gap:6px; margin:10px 0}
+.mlabel{color:var(--muted); font-size:14px; margin-right:4px}
+nav.toc{background:var(--code-bg); border:1px solid var(--line); border-radius:8px; padding:16px 20px; margin:24px 0}
+nav.toc h4{margin-top:0}
+nav.toc ol{columns:2; column-gap:30px; margin:0; padding-left:20px}
+@media (max-width:640px){nav.toc ol{columns:1}}
+nav.toc a{color:var(--fg); text-decoration:none}
+nav.toc a:hover{color:var(--accent); text-decoration:underline}
+.src{color:var(--muted); font-size:12px; font-style:italic}
+hr{border:none; border-top:1px solid var(--line); margin:34px 0}
+.pill{display:inline-block; background:var(--accent-soft); color:var(--accent);
+  border-radius:999px; padding:1px 10px; font-size:12px; font-weight:600; margin-left:6px}
+@media print{
+  body{padding:0} .wrap{max-width:none}
+  h2{break-after:avoid} h3{break-after:avoid}
+  .imp,.note,.eq,table{break-inside:avoid}
+  nav.toc{display:none}
+  #theme-toggle{display:none}
+}
+#theme-toggle{
+  position:fixed; top:16px; right:16px; z-index:50;
+  display:flex; align-items:center; gap:6px;
+  background:var(--code-bg); color:var(--fg); border:1px solid var(--line);
+  border-radius:999px; padding:7px 14px; font-size:13px; font-weight:600;
+  cursor:pointer; box-shadow:0 1px 4px rgba(0,0,0,.15);
+}
+#theme-toggle:hover{border-color:var(--accent)}
+</style>
+</head>
+<body>
+<button id="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">🌙 <span id="theme-label">Dark</span></button>
+<div class="wrap">
+
+<header class="top">
+  <h1>Digital Image Processing — Consolidated Notes</h1>
+  <p class="sub">Compiled from the handwritten mid-sem notebook (Modules 1–3) and the class-by-class lecture notes. Content, examples and numericals are kept as written in the notes; only the ordering and formatting are changed.</p>
+</header>
+
+<nav class="toc">
+  <h4>Contents</h4>
+  <ol>
+    <li><a href="#m1">Module 1 — Digital Image Fundamentals</a></li>
+    <li><a href="#interp">Image Interpolation &amp; Resampling</a></li>
+    <li><a href="#pixops">Pixel-to-Pixel &amp; Image Operations</a></li>
+    <li><a href="#m2">Module 2 — Image Enhancement &amp; Intensity Transformations</a></li>
+    <li><a href="#hist">Histogram Processing</a></li>
+    <li><a href="#m3">Module 3 — Spatial Filtering</a></li>
+    <li><a href="#smooth">Smoothing (Low-Pass Filters)</a></li>
+    <li><a href="#sharp">Sharpening (High-Pass) &amp; Edge Detection</a></li>
+    <li><a href="#boundary">Edges, Boundaries, Regions &amp; Shape Features</a></li>
+    <li><a href="#hough">Hough Transform</a></li>
+    <li><a href="#cnn">DIP → CNN Bridge</a></li>
+    <li><a href="#quick">Quick Revision Sheet</a></li>
+  </ol>
+</nav>
+
+<!-- ===================== MODULE 1 ===================== -->
+<h2 id="m1">Module 1 — Digital Image Fundamentals</h2>
+
+<h3>1. Digital Image</h3>
+<p>A digital image is a <strong>2-D function of pixel values</strong>. Every pixel has a <em>position</em> + an <em>intensity value</em>.</p>
+<div class="eq key">For an 8-bit grayscale image:&nbsp;&nbsp; 0 ≤ f(x, y) ≤ 2<sup>8</sup> − 1</div>
+
+<h3>2. Image Size / Resolution</h3>
+<p>If we have M × N pixels, then total number of pixels = <strong>M ∗ N</strong>.</p>
+
+<h3>3. Gray Level</h3>
+<p>The number of possible intensity values is called the number of gray levels. If each pixel uses <em>k</em> bits:</p>
+<div class="eq key">L = 2<sup>k</sup></div>
+<table>
+  <tr><th>Term</th><th>Meaning</th></tr>
+  <tr><td>Spatial resolution</td><td>Number / density of pixels</td></tr>
+  <tr><td>Intensity (radiometric) resolution</td><td>Number of possible intensity values</td></tr>
+  <tr><td>Spectral resolution</td><td>Ability of the sensor to distinguish different wavelengths of EM radiation</td></tr>
+</table>
+
+<h3>4. Image Acquisition &amp; Image Formation</h3>
+<ol>
+  <li><strong>Step 1</strong> — Start with any object / scene.</li>
+  <li><strong>Step 2</strong> — Sensor converts incoming energy into an electrical signal. e.g. CCD, CMOS.
+    <ul>
+      <li><strong>CMOS</strong> = Complementary Metal Oxide Semiconductor</li>
+      <li><strong>CCD</strong> = Charge Coupled Device (arrays)</li>
+    </ul>
+  </li>
+  <li><strong>Step 3 — Digitalization</strong>: to convert the continuous signal into a digital image we perform 2 operations: <strong>Sampling + Quantization</strong>.</li>
+</ol>
+<table>
+  <tr><th>Operation</th><th>Deals with</th><th>Definition</th></tr>
+  <tr><td>Sampling</td><td>Coordinates</td><td>Converting continuous spatial coordinates into discrete</td></tr>
+  <tr><td>Quantization</td><td>Intensity</td><td>Converts continuous intensity values into a finite number of levels</td></tr>
+</table>
+<p class="note">Higher quantization → better intensity detail.</p>
+
+<h4>Illumination and reflectance</h4>
+<ul>
+  <li><strong>Illumination</strong> — light falling on the object.</li>
+  <li><strong>Reflectance</strong> — how much of that light the object reflects.</li>
+</ul>
+<div class="eq key">f(x, y) = i(x, y) · r(x, y)
+&nbsp;&nbsp;&nbsp; ↑image&nbsp;&nbsp;&nbsp;↑illumination&nbsp;&nbsp;↑reflectance</div>
+
+<h3>5. Pixel Relationships</h3>
+<div class="mrow">
+  <span class="mlabel">Neighbourhood of pixel <strong>e</strong>:</span>
+  <span class="matrix"><table><tr><td class="brk" style="padding:6px 12px">
+    <table>
+      <tr><td>a</td><td>b</td><td>c</td></tr>
+      <tr><td>d</td><td><strong>[e]</strong></td><td>f</td></tr>
+      <tr><td>g</td><td>h</td><td>i</td></tr>
+    </table>
+  </td></tr></table></span>
+</div>
+<ul>
+  <li><strong>4-neighbourhood</strong> — only up, down, left, right: N<sub>4</sub>(e) = {b, d, f, h}</li>
+  <li><strong>Diagonal neighbourhood</strong>: N<sub>D</sub>(e) = {a, c, g, i}</li>
+  <li><strong>8-neighbourhood</strong>: N<sub>8</sub>(e) = {a, b, c, d, f, g, h, i}</li>
+</ul>
+
+<h3>6. Spectral Resolution &amp; Bands</h3>
+<ul>
+  <li>Higher spectral resolution → sensor can distinguish a narrow λ range.</li>
+  <li>Low spectral resolution → sensor detects a wider λ range into one band.</li>
+  <li>Spectral resolution is <strong>independent of spatial resolution</strong>.</li>
+</ul>
+<table>
+  <tr><th>Bands</th><th>Image type</th></tr>
+  <tr><td>1 band</td><td>Binary / greyscale</td></tr>
+  <tr><td>3 bands</td><td>RGB</td></tr>
+  <tr><td>Multiple bands</td><td>Multispectral</td></tr>
+  <tr><td>Hundreds of bands</td><td>Hyperspectral</td></tr>
+</table>
+
+<h3>7. Image Types &amp; Data Representation</h3>
+<ol>
+  <li><strong>Binary image</strong> — each pixel has only 2 possible values: 0, 1.</li>
+  <li><strong>Grayscale image</strong> — each pixel represents intensity. For 8-bit grayscale the range is 0 to 255.</li>
+  <li><strong>RGB image</strong> — has 3 channels / bands, so each pixel has 3 intensity values. For an 8-bit-per-channel image there are 256³ colours; storage = 3 × 8 = <strong>24 bits/pixel</strong>.</li>
+</ol>
+
+<h3>8. Storage, Compression &amp; File Formats</h3>
+<ul>
+  <li><strong>Compress redundancies</strong> — why store all pixel values?</li>
+  <li><strong>JPEG</strong> — lossy compression.</li>
+  <li><strong>TIFF</strong> — no compression.</li>
+  <li>Also discussed: JPEG vs TIFF vs PNG; mesh structure.</li>
+  <li><strong>Bit-plane slicing</strong> → compression; the quantization level decreases.</li>
+  <li><strong>LSB bit set to 0</strong> (LSB reduction) — only affects odd numbers.</li>
+</ul>
+<p class="src">Also noted in class: Helix motion image; spatial &amp; radiometric resolution; perspective vs orthographic projection; capture from sensor → matrix form (single or multiple).</p>
+
+<!-- ===================== INTERPOLATION ===================== -->
+<h2 id="interp">Image Interpolation / Resizing (Resampling)</h2>
+
+<p>Suppose we have a 2×2 image and we want to enlarge it to 4×4. We need to <strong>estimate intensity from existing pixels</strong>. Scale changes but pixel size remains the same.</p>
+
+<div class="mrow">
+  <span class="mlabel">Input 2×2:</span>
+  <span class="matrix"><table><tr><td class="brk" style="padding:6px 12px">
+    <table><tr><td>10</td><td>20</td></tr><tr><td>30</td><td>40</td></tr></table>
+  </td></tr></table></span>
+  <span class="mlabel">→ 4×4 (nearest neighbour):</span>
+  <span class="matrix"><table><tr><td class="brk" style="padding:6px 12px">
+    <table>
+      <tr><td>10</td><td>10</td><td>20</td><td>20</td></tr>
+      <tr><td>10</td><td>10</td><td>20</td><td>20</td></tr>
+      <tr><td>30</td><td>30</td><td>40</td><td>40</td></tr>
+      <tr><td>30</td><td>30</td><td>40</td><td>40</td></tr>
+    </table>
+  </td></tr></table></span>
+</div>
+
+<h3>1. Nearest Neighbour (NN) Interpolation</h3>
+<p>For a new pixel, simply find the closest existing pixel and copy its intensity. Gives an <strong>abrupt change</strong>.</p>
+<div class="eq">Old(r, c) = New( r/2 , c/2 ) = New( round(r/2), round(c/2) )
+Generally, if the scaling factor is n:&nbsp; ( r/n , c/n )
+For compression → multiplied by n.</div>
+<p>Example: the new pixel at (2,2) maps back to round(1, 1) → value 40.</p>
+
+<h3>2. Bilinear Interpolation</h3>
+<p>Some kind of (weighted) average — gives a <strong>gradual change</strong>.</p>
+<p>Take the four surrounding pixels P<sub>11</sub>, P<sub>12</sub>, P<sub>21</sub>, P<sub>22</sub> (brightness values), with r + x and c + y where 0 ≤ x ≤ 1, 0 ≤ y ≤ 1:</p>
+<div class="eq key">P = (1−x)(1−y)·P<sub>11</sub> + (1−x)·y·P<sub>12</sub> + x(1−y)·P<sub>21</sub> + x·y·P<sub>22</sub></div>
+<p>The weights sum to 1:</p>
+<div class="eq">(1 − y − x + xy) + (y − xy) + (x − xy) + xy = 1&nbsp;&nbsp;→ it is a weighted average.</div>
+<p><strong>Worked example</strong> — corner values 10, 20, 30, 40 (P<sub>11</sub>=10, P<sub>12</sub>=20, P<sub>21</sub>=30, P<sub>22</sub>=40); midpoints come out as 15 (top), 25 (centre), 35 (bottom), 20 (left), 30 (right).</p>
+<p>With x = 0.5, y = 0: P = 0.5·P<sub>11</sub> + 0.5·P<sub>21</sub> = 20.</p>
+<p><strong>5 possible positions</strong> to interpolate inside one cell: (0.5, 0), (0, 0.5), (1, 0.5), (0.5, 1), (0.5, 0.5).</p>
+<p>To go 2 → 4 → 6 (i.e. 3×), repeat the operation.</p>
+
+<h3>3. Bicubic Interpolation</h3>
+<div class="eq key">P = Σ<sub>i = 0…15</sub> w<sub>i</sub> · f(x, y)</div>
+<p>Uses a 4×4 neighbourhood (16 pixels). Nearer pixels should have higher weights; the weights are <strong>IDW (inverse distance weights)</strong>. Example weight mask used in class:</p>
+<div class="mrow">
+  <span class="matrix"><table><tr><td class="brk" style="padding:6px 12px">
+    <table>
+      <tr><td>0.1</td><td>0.18</td><td>0.18</td><td>0.1</td></tr>
+      <tr><td>0.18</td><td>0.3</td><td>0.3</td><td>0.18</td></tr>
+      <tr><td>0.18</td><td>0.3</td><td>0.3</td><td>0.18</td></tr>
+      <tr><td>0.1</td><td>0.18</td><td>0.18</td><td>0.1</td></tr>
+    </table>
+  </td></tr></table></span>
+</div>
+
+<h3>Compression side of resampling</h3>
+<p><strong>Compression</strong>: remove every 2nd row / column, but in scaling it is a manipulation — the original data is not retained.</p>
+<p><strong>"Pooling" — compression in deep learning:</strong></p>
+<ul>
+  <li><strong>Max pooling</strong> — from [10 20; 30 40] → 40</li>
+  <li><strong>Average pooling</strong> — from [10 20; 30 40] → 25</li>
+</ul>
+
+<!-- ===================== PIXEL OPS ===================== -->
+<h2 id="pixops">Pixel-to-Pixel &amp; Image Operations</h2>
+
+<h3>1. Image Addition</h3>
+<div class="mrow">
+  <span class="mlabel">A =</span>
+  <span class="matrix"><table><tr><td class="brk" style="padding:6px 12px"><table><tr><td>20</td><td>30</td></tr><tr><td>40</td><td>50</td></tr></table></td></tr></table></span>
+  <span class="mlabel">B =</span>
+  <span class="matrix"><table><tr><td class="brk" style="padding:6px 12px"><table><tr><td>10</td><td>20</td></tr><tr><td>30</td><td>40</td></tr></table></td></tr></table></span>
+  <span class="mlabel">A + B =</span>
+  <span class="matrix"><table><tr><td class="brk" style="padding:6px 12px"><table><tr><td>30</td><td>50</td></tr><tr><td>70</td><td>90</td></tr></table></td></tr></table></span>
+</div>
+<p>It can be used for things like:</p>
+<ol>
+  <li>Combining image info</li>
+  <li>Increasing brightness</li>
+  <li>Image averaging / noise reduction</li>
+</ol>
+<div class="imp"><span class="tag">Important</span>
+For an 8-bit image 0 ≤ pixel ≤ 255, so if the addition gives something greater than 255, appropriate scaling / clipping is required.</div>
+
+<h3>2. Image Subtraction</h3>
+<p>Same idea — subtract corresponding pixels. It highlights the difference between 2 images.</p>
+<div class="eq key">Background subtraction = Current image − Background image</div>
+<p>Class example: I<sub>in</sub> − I<sub>man</sub> = the person alone, <em>given same lighting, same position, no movement</em>. Total students = Photo After − Photo Before (background subtraction). For a face-by-face approach, use a deep-learning approach.</p>
+
+<h3>3. Image Averaging for Noise Reduction</h3>
+<p>Suppose we take multiple images of the same stationary object. Each image is <strong>actual object + noise</strong>. Averaging reduces random noise (theoretically noise ∝ 1/√n). Big impact on <strong>denoising</strong>.</p>
+
+<h3>4. Image Masking</h3>
+<p>Set a rectangular region of interest to a fixed value:</p>
+<div class="eq">I(200:350, 200:300) = 0;&nbsp;&nbsp;(black)
+I(200:350, 200:300) = 255;&nbsp;(white)</div>
+<p>Question posed in class: how would you mask a <strong>circular</strong> region instead of a rectangle?</p>
+
+<h3>5. Image Inversion (Negative)</h3>
+<div class="eq key">I′ = |255 − I|</div>
+<p>Example: 10 → 245, 20 → 235, 30 → 225, 200 → 55, 190 → 65, 255 → 0, 160 → 95, 145 → 110.</p>
+<p class="note">Darker images have higher noise. Inversion helps in identifying noise in darker images.</p>
+
+<h3>6. Logical Operators</h3>
+<p>AND of two images (e.g. I<sub>2</sub> AND I<sub>1</sub>) — used in the "before flooding / after flooding" example to isolate the common region.</p>
+
+<h3>7. Brightness, Contrast &amp; Noise (summary of the pixel operations class)</h3>
+<ul>
+  <li><strong>Contrast</strong> — difference between a pixel (brightness or darkness) and its neighbouring pixels.</li>
+  <li><strong>Brightness ↑</strong> → multiply by α (contrast also increases).</li>
+  <li><strong>Noise ↓</strong> → averaging of multiple images.</li>
+</ul>
+
+<h3>8. Image Shading</h3>
+<p>Non-uniform illumination across the image — the same object gives different DN values in different parts of the scene.</p>
+
+<h3>9. Colour Composite</h3>
+<ul>
+  <li><strong>Band</strong> — image matrix / brightness.</li>
+  <li><strong>Gun</strong> — colour torch (which colour that band is displayed through).</li>
+  <li>Colour of [0, 0, 0] (through the red gun example) = Red.</li>
+  <li><strong>True Colour Composite (TCC)</strong> and <strong>False Colour Composite (FCC)</strong>.</li>
+</ul>
+
+<h3>10. Tagging / Landmarks</h3>
+<p>Tag important landmarks — hair, eyes, nose, lips, ears. If you mark the centre of the landmarks, you can tell whether the person is moving: if the centre moves across frames → the person is moving.</p>
+<p class="note">Application example: teeth getting infected → increase contrast, then quantize to 8 bits (or as required).</p>
+
+<!-- ===================== MODULE 2 ===================== -->
+<h2 id="m2">Module 2 — Image Enhancement / Intensity Transformation</h2>
+<p class="src">Mainly covers image enhancement, intensity transformation and histogram processing.</p>
+
+<h3>Brightness Transformation</h3>
+<p>Original image: f(x, y), where f(x, y) is the intensity of the pixel. For an 8-bit grayscale image 0 ≤ f(x, y) ≤ 255. To make the entire image brighter:</p>
+<div class="eq key">g(x, y) = f(x, y) + β</div>
+<div class="imp"><span class="tag">Important</span>
+<ul style="margin:4px 0">
+  <li>β positive → image becomes brighter, and the histogram shifts towards the <strong>right</strong>.</li>
+  <li>β negative → image becomes darker, and the histogram shifts towards the <strong>left</strong>.</li>
+</ul></div>
+<p><strong>Clipping at the boundary:</strong> if f = 240, β = 40 → g = 280 &gt; 255, which is not allowed, so we take g = 255. Same for the other side.</p>
+<p class="note">Difference between brightness and contrast: in brightness we are shifting the whole image intensities, not the gap / change of neighbourhood.</p>
+
+<h3>Contrast Transformation</h3>
+<p>In contrast we <strong>spread or compress</strong> intensities:</p>
+<div class="eq key">g = α · f</div>
+<ul>
+  <li>α &gt; 1 → increases contrast → increase in histogram spread.</li>
+  <li>α &lt; 1 → decreases contrast → decrease in histogram spread.</li>
+</ul>
+<p>If α becomes large, many bright pixels can get pushed to 255 (same clipping rule as before), causing <strong>saturation and loss of detail</strong>.</p>
+
+<h3>Binary Thresholding</h3>
+<div class="eq key">g(x, y) = { 255,&nbsp; if f(x, y) &gt; T
+            {&nbsp;&nbsp; 0,&nbsp; otherwise</div>
+<p>Suppose we have a grayscale image — every pixel can have 256 possible intensity values. Suppose we don't care about all those shades and we simply want object → white, background → black. So we use thresholding here: <strong>binary thresholding is done for image segmentation</strong>.</p>
+<p>The choice of <strong>T is very important</strong>; we can have either:</p>
+<ol>
+  <li>Foreground extraction</li>
+  <li>Background removal</li>
+  <li>Loss of object detail — if T is high we can lose the object</li>
+  <li>Noise</li>
+</ol>
+
+<h3>Gray Level Slicing</h3>
+<p>Unlike binary thresholding, in gray level slicing we define a <strong>range</strong>. e.g. 50 ≤ f(x, y) ≤ 150; for this range we either make it white or black:</p>
+<div class="eq">g(x, y) = { 250,&nbsp; 50 ≤ f(x, y) ≤ 150
+            {&nbsp;&nbsp; 0,&nbsp; otherwise</div>
+
+<h3>Histogram Stretching</h3>
+<div class="imp"><span class="tag">Important</span>
+<strong>The problem:</strong> imagine an 8-bit image, where theoretically the intensity range is 0 → 255. But suppose your actual image uses only 50 → 180. So we are not using the full available intensity range; as a result the image looks somewhat low contrast.</div>
+<p><strong>Solution:</strong> histogram stretching — we fit the range, so 50 → 0 and 180 → 255, done using <strong>min–max</strong>.</p>
+<div class="eq key">g = (f − r<sub>min</sub>) × 255 / (r<sub>max</sub> − r<sub>min</sub>)</div>
+<p>For an arbitrary original min–max target range:</p>
+<div class="eq key">g = g<sub>min</sub> + (f − r<sub>min</sub>)(g<sub>max</sub> − g<sub>min</sub>) / (r<sub>max</sub> − r<sub>min</sub>)</div>
+<ul>
+  <li>f → original value</li>
+  <li>r → original max, min</li>
+  <li>g → desired range</li>
+</ul>
+
+<h3>Histogram Stretching + Clipping</h3>
+<p>min–max fixes the range, but what we mean by clipping here is: let's say the image range is [20, 230] and we want it in [50, 200] — so we clipped the outer darker outliers.</p>
+<p>Practically we choose a useful intensity range, clip everything outside it, then stretch that chosen range to 0–255:</p>
+<div class="eq">g = { 0,                                  f &lt; r<sub>min</sub>
+    { (f − r<sub>min</sub>)·255 / (r<sub>max</sub> − r<sub>min</sub>),  r<sub>min</sub> ≤ f ≤ r<sub>max</sub>
+    { 255,                                f &gt; r<sub>max</sub></div>
+
+<h3>Log Transformation</h3>
+<div class="eq key">g = c · log(1 + f)</div>
+<p>It expands dark pixel values and compresses bright pixel values.</p>
+
+<h3>Exponential Transformation</h3>
+<div class="eq key">g = c (e<sup>αf</sup> − 1)</div>
+<p>It expands higher intensity values more strongly.</p>
+
+<h3>Power Law / Gamma Transformation</h3>
+<div class="eq key">g = c · f<sup>γ</sup></div>
+<div class="imp"><span class="tag">Important</span>
+<ul style="margin:4px 0">
+  <li>γ = 1 → no transformation.</li>
+  <li><strong>γ &lt; 1</strong> → dark values are expanded → image becomes <strong>brighter</strong>.</li>
+  <li><strong>γ &gt; 1</strong> → dark values are compressed, higher intensities become relatively more prominent → image becomes <strong>darker</strong>.</li>
+</ul></div>
+
+<!-- ===================== HISTOGRAM ===================== -->
+<h2 id="hist">Histogram Processing</h2>
+
+<h3>Reading a histogram</h3>
+<ul>
+  <li>One hump → <strong>unimodal</strong>.</li>
+  <li>More than one hump → <strong>multimodal</strong>.</li>
+</ul>
+<div class="imp"><span class="tag">Important</span>
+Two different images can have the <strong>same histogram</strong>, because the histogram tells you the distribution of intensities, <strong>not where those pixels are spatially located</strong>.</div>
+
+<h3>Level Slicing / Histogram Slicing</h3>
+<p>Example: Rajiv Jais top-view image with 4 classes → Building, Road, Grass, Waterbody. Divide the histogram into 4 classes.</p>
+<p>Histogram: 1 for Red, 1 for Green, 1 for Blue — or 1 for greyscale.</p>
+<table>
+  <tr><th>Class</th><th>Intensity interval</th><th>Value assigned</th></tr>
+  <tr><td>Road</td><td>0 – 20</td><td>10</td></tr>
+  <tr><td>Grass</td><td>20 – 110</td><td>80</td></tr>
+  <tr><td>Building</td><td>110 – 190</td><td>150</td></tr>
+  <tr><td>Waterbody</td><td>190 – 255</td><td>200</td></tr>
+</table>
+<ul>
+  <li>This also enhances the contrast <em>within</em> each class.</li>
+  <li>Group-wise contrast enhancement happens → this is called <strong>Level Slicing</strong>.</li>
+  <li>If there is discrete data then it works; otherwise it may not work on continuous data.</li>
+</ul>
+
+<h3>Histogram Equalization</h3>
+<div class="imp"><span class="tag">Important</span>
+Suppose most pixels are concentrated in a small intensity region (e.g. 50 → 120). The image may have poor contrast. Histogram equalization tries to <strong>redistribute intensity across a wider range</strong>.</div>
+
+<h4>Intuition (contrast &amp; variance)</h4>
+<p>Compare histogram <strong>A</strong> (peaked) with <strong>B</strong> (flat, spread to 255). Which has higher contrast? Check in the pixel domain: compare each pixel w.r.t. its 8 neighbours — variance across the image, with all the neighbours. <strong>B will have overall higher variance → higher contrast.</strong></p>
+<p>Non-linear stretching rule of thumb from the notes:</p>
+<div class="note"><strong>Where the histogram is thick (mota) → stretch more; where it is thin (patla) → stretch less.</strong> If you clip the peak you lose information; stretching a thin region creates problems.</div>
+
+<h4>Numerical 1 — 3-bit image, 10 pixels</h4>
+<p>3-bit image → intensity 0–7, thus L = 8. Total N = 10 pixels.</p>
+<table>
+  <tr><th>Intensity r<sub>k</sub></th><th>Pixels</th><th>P(r<sub>k</sub>)</th><th>CDF</th></tr>
+  <tr><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+  <tr><td>1</td><td>2</td><td>0.2</td><td>0.2</td></tr>
+  <tr><td>2</td><td>3</td><td>0.3</td><td>0.5</td></tr>
+  <tr><td>3</td><td>5</td><td>0.5</td><td>1</td></tr>
+  <tr><td>4 – 7</td><td>0</td><td>0</td><td>—</td></tr>
+</table>
+<p>CDF = (cumulative no. of pixels) / N. Multiply the CDF by (L − 1) = 7:</p>
+<div class="eq">s<sub>1</sub> = 7(0.2) = 1.4 ≈ 1
+s<sub>2</sub> = 7(0.5) = 3.5 ≈ 4
+s<sub>3</sub> = 7(1)   = 7</div>
+<p>So the mapping becomes 1 → 1, 2 → 4, 3 → 7.</p>
+<p class="note">Originally our pixels were concentrated in 1, 2, 3. Now they are spread over 1, 4, 7 — so contrast increases.</p>
+
+<h4>Numerical 2 — 3-bit image, 28 pixels (DN table)</h4>
+<p>DN = Digital Number (the values before transformation).</p>
+<table>
+  <tr><th>DN (before)</th><th>fr (frequency)</th><th>Cumulative freq (CDF)</th><th>CDF × 7</th><th>Rounded (3-bit)</th></tr>
+  <tr><td>0</td><td>0</td><td>0/28</td><td>0</td><td>0</td></tr>
+  <tr><td>1</td><td>4</td><td>4/28</td><td>1</td><td>1</td></tr>
+  <tr><td>2</td><td>6</td><td>10/28</td><td>2.5</td><td>3</td></tr>
+  <tr><td>3</td><td>8</td><td>18/28</td><td>4.5</td><td>5</td></tr>
+  <tr><td>4</td><td>4</td><td>22/28</td><td>5.5</td><td>6</td></tr>
+  <tr><td>5</td><td>3</td><td>25/28</td><td>6.25</td><td>6</td></tr>
+  <tr><td>6</td><td>2</td><td>27/28</td><td>6.75</td><td>7</td></tr>
+  <tr><td>7</td><td>1</td><td>28/28</td><td>7</td><td>7</td></tr>
+</table>
+<p>Total = 28 pixels. (2<sup>3</sup> − 1) = 7 is the multiplier.</p>
+<p><strong>Effect of the mapping:</strong></p>
+<table>
+  <tr><th>DN → new value</th><th>Effect</th></tr>
+  <tr><td>0 → 0</td><td>Same (thin region)</td></tr>
+  <tr><td>1 → 1</td><td>Same (thin region)</td></tr>
+  <tr><td>2 → 3</td><td>6 pixels changed 2 → 3</td></tr>
+  <tr><td>3 → 5</td><td>8 pixels changed 3 → 5</td></tr>
+  <tr><td>4 → 6</td><td>4 pixels changed 4 → 6</td></tr>
+  <tr><td>5 → 6</td><td>3 pixels changed 5 → 6</td></tr>
+  <tr><td>6 → 7</td><td>2 pixels changed 6 → 7</td></tr>
+  <tr><td>7 → 7</td><td>Same (thin region)</td></tr>
+</table>
+<div class="imp"><span class="tag">Key idea</span>
+This is <strong>non-linear stretching</strong>: where the histogram is dense the stretch is larger, where it is sparse the stretch is smaller.</div>
+
+<h3>Adaptive Histogram Equalization (AHE)</h3>
+<p>Normal histogram equalization considers the whole image. Adaptive histogram equalization says: <strong>different parts of the image may need different enhancement</strong>. So instead of one histogram for the whole range, we divide the image into small regions and equalize them individually.</p>
+
+<h3>Contrast Limited Adaptive Histogram Equalization (CLAHE)</h3>
+<p>CLAHE = AHE + limit on contrast. AHE can sometimes over-amplify noise, especially in nearly uniform areas. CLAHE therefore:</p>
+<ol>
+  <li>Divide the image into tiles</li>
+  <li>Calculate the histogram for each tile</li>
+  <li>Clip at a specified contrast limit</li>
+  <li>Redistribute the excess</li>
+  <li>Perform equalization</li>
+  <li>Combine neighbouring tiles smoothly</li>
+</ol>
+
+<h3>Colour preservation</h3>
+<p>Blindly enhancing individual RGB components can modify colour; converting to grayscale loses colour information.</p>
+
+<!-- ===================== MODULE 3 ===================== -->
+<h2 id="m3">Module 3 — Spatial Filtering (Neighbourhood Processing)</h2>
+
+<p>Spatial filtering means <strong>modifying a pixel by looking at that pixel &amp; its neighbouring pixels</strong>.</p>
+<div class="eq key">g(x, y) = T[ f(x, y) ]
+&nbsp;&nbsp;↑O/P image&nbsp;&nbsp;&nbsp;↑Transformation / filter to apply&nbsp;&nbsp;&nbsp;↑I/P image</div>
+<p>Can be applied to the pixels of a single image.</p>
+
+<h3>Kernel</h3>
+<p>A small matrix that tells us how neighbouring pixels should influence the output pixel.</p>
+<div class="mrow">
+  <span class="mlabel">Input:</span>
+  <span class="matrix"><table><tr><td class="brk" style="padding:6px 12px"><table>
+    <tr><td>10</td><td>20</td><td>30</td></tr>
+    <tr><td>40</td><td>50</td><td>60</td></tr>
+    <tr><td>70</td><td>80</td><td>90</td></tr></table></td></tr></table></span>
+  <span class="mlabel">Kernel:</span>
+  <span class="matrix"><table><tr><td class="brk" style="padding:6px 12px"><table>
+    <tr><td>1</td><td>1</td><td>1</td></tr>
+    <tr><td>1</td><td>1</td><td>1</td></tr>
+    <tr><td>1</td><td>1</td><td>1</td></tr></table></td></tr></table></span>
+</div>
+<p>We want to process the centre pixel 50. Instead of considering 50 only, we consider its neighbours too, based on the filter / kernel / mask:</p>
+<div class="eq">10(1) + 20(1) + 30(1) + 40(1) + 50(1) + 60(1) + 70(1) + 80(1) + 90(1) = 450
+x = 450 / Σkernel = 450 / 9 = <strong>50</strong>&nbsp;&nbsp;← basic idea of the mean filter</div>
+
+<div class="imp"><span class="tag">Important</span>
+<strong>Low Pass Filter</strong> → ① allows low frequency info ② suppresses high frequency info.<br>
+<strong>High Pass Filter</strong> → ① allows high frequency info ② suppresses low frequency info.<br>
+High pass filters enhance the gap between pixels, hence increasing <strong>contrast</strong> → edge enhancement &amp; feature extraction.</div>
+
+<h3>Frequency = variance, not brightness</h3>
+<div class="note">
+  <ul style="margin:4px 0">
+    <li>A homogeneous block (e.g. all values ≈ 200) is a <strong>low-frequency zone</strong>.</li>
+    <li>A block with large variation (e.g. 20, 03, 32, 66 / 2, 25, 90, 64 / 17, 15, 255) is a <strong>high-frequency zone</strong>: variance ↑, not homogeneous.</li>
+    <li>Accordingly, high pass filter promotes high-frequency areas; low pass filter promotes low frequency and demotes high frequency.</li>
+    <li><strong>High / low frequency depends upon variance, not brightness.</strong></li>
+    <li>Both zones can exist within the same image.</li>
+  </ul>
+</div>
+
+<h3>Correlation vs Convolution</h3>
+<ul>
+  <li><strong>Correlation</strong> — the process of applying a kernel to an image neighbourhood <em>without flipping</em> the kernel.</li>
+  <li><strong>Convolution</strong> — the process of applying a kernel <em>after rotating / flipping it by 180°</em> (horizontally &amp; vertically).</li>
+</ul>
+<div class="mrow">
+  <span class="mlabel">Kernel k:</span>
+  <span class="matrix"><table><tr><td class="brk" style="padding:6px 12px"><table>
+    <tr><td>1</td><td>2</td><td>3</td></tr><tr><td>4</td><td>5</td><td>6</td></tr><tr><td>7</td><td>8</td><td>9</td></tr></table></td></tr></table></span>
+  <span class="mlabel">→ horizontal flip →</span>
+  <span class="matrix"><table><tr><td class="brk" style="padding:6px 12px"><table>
+    <tr><td>3</td><td>2</td><td>1</td></tr><tr><td>6</td><td>5</td><td>4</td></tr><tr><td>9</td><td>8</td><td>7</td></tr></table></td></tr></table></span>
+  <span class="mlabel">→ vertical flip → k′:</span>
+  <span class="matrix"><table><tr><td class="brk" style="padding:6px 12px"><table>
+    <tr><td>9</td><td>8</td><td>7</td></tr><tr><td>6</td><td>5</td><td>4</td></tr><tr><td>3</td><td>2</td><td>1</td></tr></table></td></tr></table></span>
+</div>
+<div class="imp"><span class="tag">Remember</span>
+Correlation produces the <strong>same</strong> result as convolution for <strong>symmetric kernels</strong>, and a <strong>different</strong> result for asymmetric kernels.</div>
+
+<h3>Linear vs Non-Linear Filtering</h3>
+<p><strong>Linear filter:</strong> output is a weighted sum of neighbourhood pixels. e.g. mean filter.</p>
+<div class="eq key">g(x, y) = Σ f(x + i, y + j) · w(i, j)&nbsp;&nbsp;← calculates a weighted sum</div>
+<p><strong>Non-linear filter:</strong> doesn't simply calculate a weighted sum. e.g. median filter.</p>
+<div class="eq">Take:  [10, 20, 200, 30, 40]
+Sort:  [10, 20, 30, 40, 200]
+Median: <strong>30</strong></div>
+
+<h3>Padding, Stride &amp; Output Size</h3>
+<ul>
+  <li><strong>Padding</strong> — added at the borders so the kernel can be applied at edge pixels.</li>
+  <li><strong>Stride</strong> — the step by which the kernel shifts. On an 8×8 input with stride = 2 and a 1×1 convolution convention, the output is <strong>4×4</strong>.</li>
+  <li>At borders, a value of 0 in the neighbourhood can be replaced with the local weighted mean, e.g. (200×8 + 0)/9 = 1600/9 = 177.77 → replace 0 by 177.77.</li>
+</ul>
+<div class="eq key">Weighted result = Σ f<sub>i</sub> w<sub>i</sub> / Σ w<sub>i</sub></div>
+
+<!-- ===================== SMOOTHING ===================== -->
+<h2 id="smooth">Smoothing (Low-Pass Filtering)</h2>
+
+<div class="imp"><span class="tag">Why smooth?</span>
+To <strong>remove noise</strong> + reduce unwanted small variation.</div>
+
+<h3>1. Mean Filter</h3>
+<p>All coefficients have equal weight:</p>
+<div class="mrow">
+  <span class="mlabel">(1/9) ×</span>
+  <span class="matrix"><table><tr><td class="brk" style="padding:6px 12px"><table>
+    <tr><td>1</td><td>1</td><td>1</td></tr><tr><td>1</td><td>1</td><td>1</td></tr><tr><td>1</td><td>1</td><td>1</td></tr></table></td></tr></table></span>
+</div>
+<div class="imp"><span class="tag">Important</span>
+Because the neighbourhood pixels around an edge are also averaged, the <strong>mean filter blurs the image</strong>.</div>
+
+<h3>2. Gaussian Filter</h3>
+<p>Pixels closer to the centre should have more influence than pixels farther away — because when we are smoothing we trust pixels nearer to it more than the farther pixels. Corners are farther, so they have less weight; closer has higher weight.</p>
+<div class="mrow">
+  <span class="matrix"><table><tr><td class="brk" style="padding:6px 12px"><table>
+    <tr><td>1</td><td>2</td><td>1</td></tr><tr><td>2</td><td>4</td><td>2</td></tr><tr><td>1</td><td>2</td><td>1</td></tr></table></td></tr></table></span>
+  <span class="mlabel">← a low pass filter</span>
+</div>
+<p>The mathematical rule for pixel selection in a Gaussian is:</p>
+<div class="eq key">G(x, y) = (1 / 2πσ²) · e<sup>−(x² + y²) / 2σ²</sup></div>
+<p><strong>Normalisation:</strong> before using a kernel we normalise it. (1+2+1) + (2+4+2) + (1+2+1) = 16, so the kernel becomes (1/16)[ ]<sub>3×3</sub>.</p>
+<h4>Significance of σ</h4>
+<ul>
+  <li><strong>Small σ</strong> — Gaussian is narrow, only nearby pixels get significant weight → <strong>less smoothing</strong>.</li>
+  <li><strong>High σ</strong> — Gaussian is wide, more surrounding pixels contribute → <strong>more smoothing / blur</strong>.</li>
+</ul>
+
+<h3>3. Median Filter (non-linear)</h3>
+<p>It ignores the outlier values unlike the mean filter. It generally <strong>preserves edges better</strong>.</p>
+
+<h3>Comparison of smoothing filters</h3>
+<table>
+  <tr><th>Filter</th><th>Main use</th><th>Edge preservation</th></tr>
+  <tr><td>Mean</td><td>General smoothing</td><td>Poor</td></tr>
+  <tr><td>Gaussian</td><td>Smoothing / noise</td><td>Better than mean</td></tr>
+  <tr><td>Median</td><td>Salt &amp; pepper smoothing</td><td>Excellent</td></tr>
+  <tr><td>Mode</td><td>Local dominant value</td><td>Good</td></tr>
+</table>
+
+<h3>Use of smoothing — why?</h3>
+<p>Let's say our image is: noise, noise, noise / <strong>actual object</strong> / noise, noise. If we process it directly, all those tiny variations can interfere. So: <strong>smooth first → reduce noise → process / detect</strong>.</p>
+<div class="imp"><span class="tag">Important</span>
+This is why we <strong>always do smoothing before edge detection</strong>.<br>
+Smoothing = Low Pass Filtering = Suppressing High Frequency = Reducing Contrast.</div>
+
+<!-- ===================== SHARPENING ===================== -->
+<h2 id="sharp">Sharpening (High-Pass Filtering) &amp; Edge Detection</h2>
+
+<p>Sharpening makes edges &amp; fine details more prominent.</p>
+<div class="eq">Before:  20  20  20   100  100  100
+After:   20  20  20   180  180  180
+                       ↑ frequency increase = contrast increase</div>
+<div class="imp"><span class="tag">Definition</span>Sharpening → emphasize edges / details.</div>
+<p>High pass filtering suppresses slowly-varying intensity while emphasizing rapid changes, which produces edge enhancement.</p>
+
+<h3>1. First Derivative Filters</h3>
+<p>We can detect an edge by looking at the rate of change of intensity.</p>
+<div class="eq">f = [20, 20, 20, 200, 200, 200]
+δ =   0,  0,  180,  0,  0</div>
+<ul>
+  <li>Large δ → strong edge</li>
+  <li>Small δ → smooth region</li>
+</ul>
+
+<h3>2. Gradient (2-D image)</h3>
+<p>Intensity can change in 2 directions in a 2-D (real) image — horizontal: G<sub>x</sub>, vertical: G<sub>y</sub>.</p>
+<div class="eq key">∇f = [ G<sub>x</sub> , G<sub>y</sub> ]<sup>T</sup></div>
+<p>The gradient tells us ① how strong the edge is, and ② which direction the intensity is changing.</p>
+
+<h3>3. Prewitt Filter</h3>
+<p>Prewitt approximates these derivatives using kernels.</p>
+<div class="mrow">
+  <span class="mlabel">G<sub>x</sub> =</span>
+  <span class="matrix"><table><tr><td class="brk" style="padding:6px 12px"><table>
+    <tr><td>−1</td><td>0</td><td>1</td></tr><tr><td>−1</td><td>0</td><td>1</td></tr><tr><td>−1</td><td>0</td><td>1</td></tr></table></td></tr></table></span>
+  <span class="mlabel">→ it is doing <strong>Right − Left</strong>; compares right side vs left side, so it detects <strong>vertical edges</strong>.</span>
+</div>
+<div class="mrow">
+  <span class="mlabel">G<sub>y</sub> =</span>
+  <span class="matrix"><table><tr><td class="brk" style="padding:6px 12px"><table>
+    <tr><td>−1</td><td>−1</td><td>−1</td></tr><tr><td>0</td><td>0</td><td>0</td></tr><tr><td>1</td><td>1</td><td>1</td></tr></table></td></tr></table></span>
+  <span class="mlabel">→ it is doing <strong>Bottom − Top</strong>; compares bottom vs top, so it detects <strong>horizontal edges</strong>.</span>
+</div>
+<div class="eq key">Prewitt = Σ Kernel(x, y) ∗ Image(i, j) / Σ |Kernel(x, y)|</div>
+<h4>Worked example</h4>
+<div class="mrow">
+  <span class="mlabel">Image:</span>
+  <span class="matrix"><table><tr><td class="brk" style="padding:6px 12px"><table>
+    <tr><td>20</td><td>200</td><td>200</td></tr><tr><td>20</td><td>200</td><td>200</td></tr><tr><td>20</td><td>200</td><td>200</td></tr></table></td></tr></table></span>
+  <span class="mlabel">Kernel:</span>
+  <span class="matrix"><table><tr><td class="brk" style="padding:6px 12px"><table>
+    <tr><td>−1</td><td>0</td><td>1</td></tr><tr><td>−1</td><td>0</td><td>1</td></tr><tr><td>−1</td><td>0</td><td>1</td></tr></table></td></tr></table></span>
+</div>
+<div class="eq">−20 + 0 + 200
+−20 + 0 + 200   = 540
+−20 + 0 + 200
+
+540 / 6 = <strong>90</strong>&nbsp;&nbsp;(denominator = (|−1| + |0| + |1|) × 3 = 6)</div>
+
+<h3>4. Sobel Filter</h3>
+<p>Sobel does essentially the same thing as Prewitt, but gives more weight to the centre row / column.</p>
+<div class="mrow">
+  <span class="mlabel">Sobel G<sub>x</sub> =</span>
+  <span class="matrix"><table><tr><td class="brk" style="padding:6px 12px"><table>
+    <tr><td>−1</td><td>0</td><td>1</td></tr><tr><td>−2</td><td>0</td><td>2</td></tr><tr><td>−1</td><td>0</td><td>1</td></tr></table></td></tr></table></span>
+  <span class="mlabel">Sobel G<sub>y</sub> =</span>
+  <span class="matrix"><table><tr><td class="brk" style="padding:6px 12px"><table>
+    <tr><td>−1</td><td>−2</td><td>−1</td></tr><tr><td>0</td><td>0</td><td>0</td></tr><tr><td>1</td><td>2</td><td>1</td></tr></table></td></tr></table></span>
+</div>
+<p>Because that extra weighting gives more emphasis to the pixels near the centre of the neighbourhood &amp; provides some smoothing in the perpendicular direction:</p>
+<div class="note"><strong>Sobel = derivative + smoothing</strong> → somewhat more robust to noise than Prewitt.</div>
+
+<h3>Gradient magnitude &amp; edge direction</h3>
+<div class="eq key">Gradient magnitude:&nbsp; |∇I| = √(G<sub>x</sub>² + G<sub>y</sub>²)&nbsp;&nbsp;&nbsp;↑ larger → stronger edge
+Edge direction:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; θ = tan<sup>−1</sup>( G<sub>y</sub> / G<sub>x</sub> )</div>
+<div class="imp"><span class="tag">Important</span>
+The gradient points in the direction of <strong>maximum intensity increase</strong>, which is <strong>perpendicular to the edge</strong>.</div>
+
+<h3>5. Second Derivative Filter / Laplacian Filter</h3>
+<p>First derivative filters were checking <em>where</em> the intensity changes rapidly. Second derivative filters look at <strong>how rapidly the first derivative is changing</strong>.</p>
+<div class="eq key">∇²f = ∂²f/∂x² + ∂²f/∂y²</div>
+<p>So it combines the second derivative in the horizontal &amp; vertical direction. Commonly used 4-neighbour kernels are:</p>
+<div class="mrow">
+  <span class="mlabel">k =</span>
+  <span class="matrix"><table><tr><td class="brk" style="padding:6px 12px"><table>
+    <tr><td>0</td><td>1</td><td>0</td></tr><tr><td>1</td><td>−4</td><td>1</td></tr><tr><td>0</td><td>1</td><td>0</td></tr></table></td></tr></table></span>
+  <span class="mlabel">&amp;&nbsp; K =</span>
+  <span class="matrix"><table><tr><td class="brk" style="padding:6px 12px"><table>
+    <tr><td>1</td><td>1</td><td>1</td></tr><tr><td>1</td><td>−8</td><td>1</td></tr><tr><td>1</td><td>1</td><td>1</td></tr></table></td></tr></table></span>
+</div>
+<p>The class also used the all-directions form:</p>
+<div class="mrow">
+  <span class="matrix"><table><tr><td class="brk" style="padding:6px 12px"><table>
+    <tr><td>0</td><td>−1</td><td>0</td></tr><tr><td>−1</td><td>4</td><td>−1</td></tr><tr><td>0</td><td>−1</td><td>0</td></tr></table></td></tr></table></span>
+  <span class="mlabel">← responds in <strong>all directions</strong></span>
+</div>
+<p>Laplacian → edges → sharpening. The common sharpening idea is:</p>
+<div class="eq key">g(x, y) = f(x, y) − ∇²f(x, y)&nbsp;&nbsp;(depending on the sign convention of the Laplacian)</div>
+<p>Equivalently, as written in the lecture notes:</p>
+<div class="eq">Low pass filter − Original image = Edge detected image
+Edge detected image + Original image = Edge enhanced image</div>
+
+<h3>6. Laplacian of Gaussian (LoG)</h3>
+<p><strong>Problem with the Laplacian:</strong> it is very sensitive to noise. Noise = sudden change in intensity, so noise → Laplacian responds strongly → <strong>false edges</strong>.</p>
+<div class="imp"><span class="tag">Important</span>
+LoG = Laplacian of Gaussian = smooth to remove noise, then Laplacian.<br>
+Low pass → High pass → edge intensify.</div>
+<div class="eq key">LoG = ∇²( G ∗ f )&nbsp;&nbsp; where G = Gaussian function and ∇² is the Laplacian</div>
+<p><strong>Zero crossing:</strong> the Laplacian produces +ve and −ve values around an edge. The location where the Laplacian changes sign is called the <strong>zero crossing</strong>.</p>
+
+<h3>7. Canny Edge Detection</h3>
+<p><em>(Done after all the above.)</em></p>
+<ol>
+  <li>Reduce noise in the image using a low pass filter (such as a Gaussian filter).</li>
+</ol>
+<p class="src">Note: in the notebook the Canny steps stop after step 1 — the remaining Canny steps (gradient computation, non-maximum suppression, double thresholding, hysteresis / edge tracking) were not written down.</p>
+
+<h3>Example — kernel shifting detects the edge</h3>
+<div class="mrow">
+  <span class="mlabel">Original:</span>
+  <span class="matrix"><table><tr><td class="brk" style="padding:6px 12px"><table>
+    <tr><td>10</td><td>10</td><td>50</td><td>50</td></tr>
+    <tr><td>10</td><td>10</td><td>50</td><td>50</td></tr>
+    <tr><td>10</td><td>10</td><td>50</td><td>50</td></tr></table></td></tr></table></span>
+  <span class="mlabel">After filtering:</span>
+  <span class="matrix"><table><tr><td class="brk" style="padding:6px 12px"><table>
+    <tr><td>10</td><td>23</td><td>36</td><td>50</td></tr>
+    <tr><td>10</td><td>23</td><td>36</td><td>50</td></tr>
+    <tr><td>10</td><td>23</td><td>36</td><td>50</td></tr></table></td></tr></table></span>
+  <span class="mlabel">→ detects the edge</span>
+</div>
+<p>The high-pass kernel used in that example was:</p>
+<div class="mrow">
+  <span class="matrix"><table><tr><td class="brk" style="padding:6px 12px"><table>
+    <tr><td>−1</td><td>−1</td><td>−1</td></tr><tr><td>−1</td><td>8</td><td>−1</td></tr><tr><td>−1</td><td>−1</td><td>−1</td></tr></table></td></tr></table></span>
+</div>
+<p>For a homogeneous region: 200×(−8) + 0×8 → the result collapses towards 0; other values (e.g. 200 → 0) where variance is high are preserved. Sample gradient arithmetic from the board: −30 − 20 + 80 − 150 − 120 = −200 ↑ ; −180 + 40 → −220 ; −30 − 150 − 50 − 50 + 400.</p>
+
+<!-- ===================== BOUNDARY ===================== -->
+<h2 id="boundary">Edges, Boundaries, Regions &amp; Shape Features</h2>
+
+<h3>Edge vs Boundary</h3>
+<div class="imp"><span class="tag">Definition</span>
+<strong>Boundary = enclosed (joined edges).</strong> An edge is a local intensity change; a boundary is a closed chain of edges enclosing a region.</div>
+
+<h3>Extracting the edge</h3>
+<div class="eq key">I(i, j) − I(i+1, j+1)&nbsp;&nbsp;{ for all 4 edges }</div>
+<p><strong>Moore's algorithm</strong> is used to identify the boundary pixels.</p>
+<div class="note">Rule: among the eight neighbours, <strong>one should be 0</strong> for a pixel to be a boundary pixel.</div>
+
+<h3>bwboundary</h3>
+<p><code>bwboundary</code> gives a <strong>list of (row, col) values of all boundary points</strong>. There are outer and inner boundaries → 2 lists.</p>
+<p>If B = bwboundary(F), then <code>length{B}</code> = number of boundary objects found:</p>
+<table>
+  <tr><th>Shape</th><th>length{B}</th><th>Composition</th></tr>
+  <tr><td>Two rings (outline only)</td><td>3</td><td>2 inner + 1 outer</td></tr>
+  <tr><td>One filled blob + one ring</td><td>2</td><td>1 outer + 1 inner</td></tr>
+  <tr><td>Two fully filled blobs</td><td>1</td><td>1 outer</td></tr>
+</table>
+<p>Example from the board: a scene with a triangle (filled with 1s), a square (1s) and a circle (1s) → length = 3.</p>
+
+<h3>Region Properties</h3>
+<div class="eq key">regionprops(BW, 'Area', 'Perimeter')&nbsp;&nbsp;→ for B{1}: Area, Perimeter (similarly for the other boundaries)</div>
+
+<h3>Corners</h3>
+<ul>
+  <li>Corners identify the object shape.</li>
+  <li>Using the equations of lines and <strong>their intersections</strong> — those intersections are the corners.</li>
+  <li>Estimate the number of corners; e.g. Shape I → 4 corners, Shape II → 3 corners.</li>
+  <li>Gradient difference is used: <code>dy = diff(:, 1)</code>, <code>dx = diff(:, 2)</code>.</li>
+</ul>
+<div class="imp"><span class="tag">Key idea</span>
+Once a corner is identified, you can get edges, and then you can identify geometric shapes using edges.</div>
+
+<h3>Man-made (Geometric) vs Natural (Non-Geometric) objects</h3>
+<table>
+  <tr><th>Man-made / Geometric</th><th>Natural / Non-Geometric</th></tr>
+  <tr><td>1. Straight lines</td><td>1. Less straight line</td></tr>
+  <tr><td>2. Fewer corners</td><td>2. More corners</td></tr>
+  <tr><td>3. More symmetry</td><td>3. Less symmetry</td></tr>
+  <tr><td>4. Circularity as below</td><td>4. Circularity as below</td></tr>
+</table>
+<div class="eq key">Circularity = 4πA / P²&nbsp;&nbsp;(A = area, P = perimeter)</div>
+<p><strong>For a circle:</strong> 4π·πr² / (2πr)² = 1.</p>
+<p><strong>For a square (side a):</strong> 4π·a² / (4a)² = 4πa² / 16a² = <strong>π/4</strong>.</p>
+<div class="note">Gradient change is small in natural objects but abrupt in geometric objects.</div>
+
+<h3>Other shape / texture descriptors mentioned</h3>
+<ul>
+  <li>Texture (homogenised), smoothness, variance</li>
+  <li>Entropy, resolution, roughness</li>
+  <li><strong>"C Hull"</strong> (convex hull) algorithm for convexity</li>
+  <li><strong>Radius of curvature</strong> — θ₁, θ₂, θ₃ along a curve (used for natural objects such as a tree)</li>
+</ul>
+
+<h3>Image reflection (MATLAB loop)</h3>
+<p>Right-hand batsman → left-handed (mirror the image). For a 500×500 image:</p>
+<div class="eq">for i = 1 : m       % 500
+  for j = 1 : n     % 500
+    R(i, j, :) = I(i, n − j + 1, :);
+  end
+end</div>
+
+<!-- ===================== HOUGH ===================== -->
+<h2 id="hough">Hough Transformation</h2>
+<div class="imp"><span class="tag">Important</span>
+Used to detect <strong>geometric shapes</strong> in an image — lines, circles, and other shapes that can be represented parametrically.</div>
+
+<h3>How it differs from normal edge detection</h3>
+<p>Let's say we have a broken line. The edge detector says there are 2 edges, but <strong>Hough identifies it as a single straight line formation</strong>.</p>
+
+<h3>Steps</h3>
+<ol>
+  <li><strong>Parametric form of a line:</strong>
+    <div class="eq key">ρ = x cos θ + y sin θ</div>
+    where ρ = perpendicular distance from the origin to the line, and θ = angle made by the perpendicular with the +ve x-axis.
+  </li>
+  <li>Suppose we have one edge pixel. Can this pixel belong to many different lines? → <strong>Yes.</strong> So one image pixel generates many possible (ρ, θ) combinations. These are represented in <strong>Hough space</strong>.</li>
+  <li>Now imagine we have many edge pixels belonging to the same line. Each pixel <strong>votes</strong> for all the possible lines that could pass through it. Eventually the correct line gets the maximum votes. We store the votes in an <strong>accumulator array</strong>.
+    <div class="eq">Pixel votes → Accumulator counts → peak tells us the shape</div>
+  </li>
+</ol>
+<p>Each point generates its own equation: ρ = x₀cos θ + y₀ sin θ, ρ = x₁cos θ + y₁ sin θ, … , ρ = x<sub>n</sub>cos θ + y<sub>n</sub> sin θ.</p>
+
+<h3>Circles</h3>
+<p>For a circle we have another parametric representation:</p>
+<div class="eq key">(x − a)² + (y − b)² = r²&nbsp;&nbsp;(a, b = centre, r = radius)</div>
+<p>Therefore it is a <strong>3-D Hough space</strong>.</p>
+
+<div class="imp"><span class="tag">Remember</span>
+One pixel → one sinusoid in Hough space.<br>
+Multiple points → the sinusoids intersect at one common point.<br>
+That common point is the line parameter.</div>
+<p>In the accumulator drawing, θ runs from −90° to +90° on the x-axis and distance (ρ) on the y-axis; the sinusoids for different edge points are plotted and their crossing gives the detected line.</p>
+
+<!-- ===================== CNN ===================== -->
+<h2 id="cnn">DIP → CNN Bridge</h2>
+
+<p>Topics linked in class: Texture (homogenised), smoothness, variance, <strong>CNN (Convolutional Neural Network) in imaging</strong>, padding concept, convolutions.</p>
+
+<h3>Stone – Paper – Scissors demo (CNN pipeline)</h3>
+<p>Pipeline shown: <strong>Input images → Filters / Convolution → CNN layers → Densification (Flatten + Dense) → Output layer → Prediction.</strong></p>
+<div class="eq">Image → CNN layer → filter
+32 × (100 × 100 × 3)
+        ↓
+Compress using pooling — Max / Average</div>
+<ul>
+  <li>Tunable settings: number of filters, kernel size, stride, padding.</li>
+  <li>Filters learn edges, textures, finger patterns — hierarchical features: edges → fingers → hand shape → gesture.</li>
+  <li>Parameter explosion at the dense layer; global average pooling as the efficient alternative.</li>
+  <li>Accuracy noted in class for the demo: <strong>44%</strong>.</li>
+</ul>
+
+<!-- ===================== QUICK REVISION ===================== -->
+<h2 id="quick">Quick Revision Sheet</h2>
+
+<h3>Formula list</h3>
+<table>
+  <tr><th>Concept</th><th>Formula</th></tr>
+  <tr><td>Gray levels</td><td>L = 2<sup>k</sup></td></tr>
+  <tr><td>Image formation</td><td>f(x, y) = i(x, y) · r(x, y)</td></tr>
+  <tr><td>Spatial filtering</td><td>g(x, y) = T[f(x, y)]</td></tr>
+  <tr><td>Brightness</td><td>g = f + β</td></tr>
+  <tr><td>Contrast</td><td>g = α f</td></tr>
+  <tr><td>Binary threshold</td><td>g = 255 if f &gt; T, else 0</td></tr>
+  <tr><td>Histogram stretch</td><td>g = (f − r<sub>min</sub>)·255 / (r<sub>max</sub> − r<sub>min</sub>)</td></tr>
+  <tr><td>Log</td><td>g = c log(1 + f)</td></tr>
+  <tr><td>Exponential</td><td>g = c(e<sup>αf</sup> − 1)</td></tr>
+  <tr><td>Gamma</td><td>g = c f<sup>γ</sup>&nbsp;&nbsp;(γ&lt;1 brighter, γ&gt;1 darker)</td></tr>
+  <tr><td>Histogram equalization</td><td>s<sub>k</sub> = (L − 1) × CDF(r<sub>k</sub>), then round off</td></tr>
+  <tr><td>Bilinear</td><td>P = (1−x)(1−y)P<sub>11</sub> + (1−x)yP<sub>12</sub> + x(1−y)P<sub>21</sub> + xyP<sub>22</sub></td></tr>
+  <tr><td>Gaussian kernel</td><td>G(x,y) = (1/2πσ²) e<sup>−(x²+y²)/2σ²</sup></td></tr>
+  <tr><td>Gradient magnitude</td><td>|∇I| = √(G<sub>x</sub>² + G<sub>y</sub>²)</td></tr>
+  <tr><td>Edge direction</td><td>θ = tan<sup>−1</sup>(G<sub>y</sub>/G<sub>x</sub>)</td></tr>
+  <tr><td>Laplacian</td><td>∇²f = ∂²f/∂x² + ∂²f/∂y²</td></tr>
+  <tr><td>LoG</td><td>∇²(G ∗ f)</td></tr>
+  <tr><td>Hough line</td><td>ρ = x cos θ + y sin θ</td></tr>
+  <tr><td>Hough circle</td><td>(x−a)² + (y−b)² = r²</td></tr>
+  <tr><td>Circularity</td><td>4πA / P²&nbsp;&nbsp;(circle = 1, square = π/4)</td></tr>
+</table>
+
+<h3>One-line answers marked "Imp" in the notebook</h3>
+<ul>
+  <li>Low pass = allows low frequency, suppresses high frequency. High pass = the opposite; increases contrast → edge enhancement &amp; feature extraction.</li>
+  <li>High / low frequency depends on <strong>variance</strong>, not brightness.</li>
+  <li>Correlation = convolution for symmetric kernels; different for asymmetric kernels.</li>
+  <li>Mean filter blurs the image because pixels around an edge are also averaged.</li>
+  <li>Median filter ignores outliers → excellent edge preservation.</li>
+  <li>Smoothing = low pass = suppressing high frequency = reducing contrast; always done <strong>before</strong> edge detection.</li>
+  <li>Sobel = derivative + smoothing → more robust to noise than Prewitt.</li>
+  <li>Gradient points in the direction of maximum intensity increase, perpendicular to the edge.</li>
+  <li>Second derivative asks: how rapidly is the first derivative changing?</li>
+  <li>Laplacian is noise-sensitive → use LoG; zero crossing = where the Laplacian changes sign.</li>
+  <li>β positive → brighter, histogram shifts right; β negative → darker, shifts left.</li>
+  <li>γ &lt; 1 → brighter; γ &gt; 1 → darker.</li>
+  <li>Two different images can have the same histogram — the histogram carries distribution, not spatial location.</li>
+  <li>Boundary = enclosed (joined) edges.</li>
+  <li>Hough: one pixel → one sinusoid; intersecting sinusoids give the line parameters.</li>
+</ul>
+
+<hr>
+<p class="src">Gaps in the source notes, kept as-is rather than filled in: the Canny edge detection steps stop after "reduce noise using a low pass filter"; bilinear interpolation carries a "check GPT" note in the notebook; one page is marked "Difference table missed". Everything else above is drawn from the two PDFs.</p>
+
+</div>
+<script>
+(function(){
+  var KEY = 'dip-notes-theme';
+  var root = document.documentElement;
+  var label = document.getElementById('theme-label');
+  var btn = document.getElementById('theme-toggle');
+
+  function systemPrefersDark(){
+    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  }
+  function apply(theme){
+    // theme: 'dark' | 'light' | null (follow system)
+    if(theme === 'dark' || theme === 'light'){
+      root.setAttribute('data-theme', theme);
+    } else {
+      root.removeAttribute('data-theme');
+    }
+    var isDark = theme === 'dark' || (theme === null && systemPrefersDark());
+    label.textContent = isDark ? 'Light' : 'Dark';
+    btn.firstChild.textContent = isDark ? '☀️ ' : '🌙 ';
+  }
+  function getSaved(){
+    try { return localStorage.getItem(KEY); } catch(e){ return null; }
+  }
+  function save(theme){
+    try {
+      if(theme) localStorage.setItem(KEY, theme);
+      else localStorage.removeItem(KEY);
+    } catch(e){}
+  }
+
+  window.toggleTheme = function(){
+    var current = root.getAttribute('data-theme') || (systemPrefersDark() ? 'dark' : 'light');
+    var next = current === 'dark' ? 'light' : 'dark';
+    apply(next);
+    save(next);
+  };
+
+  apply(getSaved());
+})();
+</script>
+</body>
+</html>
