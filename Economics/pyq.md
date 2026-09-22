@@ -94,32 +94,12 @@ Here are all the questions for **Principles of Economics** found in the provided
 * **Q9.** The weekly demand schedule for online movie rentals in a city is given below:
 
 
-| Price (₹)
-
- | Quantity Demanded ('000 rentals)
-
- |
+| Price (₹) | Quantity Demanded ('000 rentals) |
 | --- | --- |
-| 60
-
- | 20
-
- |
-| 50
-
- | 30
-
- |
-| 40
-
- | 45
-
- |
-| 30
-
- | 70
-
- |
+| 60 | 20 |
+| 50 | 30 |
+| 40 | 45 |
+| 30 | 70 |
 
 
 * **a.** Using the midpoint (arc) method, calculate the price elasticity of demand between:
@@ -232,22 +212,10 @@ Here are all the questions for **Principles of Economics** found in the provided
 * **Q5.** Two competing smartphone brands TechNova and MobiQuest are preparing to launch mid-range models in the Indian market. Each firm must choose between two pricing strategies: **H**: High Price (premium positioning) or **L**: Low Price (aggressive penetration pricing). The firms make decisions simultaneously, and their profits depend on the combination of strategies chosen. The estimated profit payoffs (in crores) are shown below:
 
 
-| Payoff Matrix | MobiQuest: H
-
- | MobiQuest: L
-
- |
+| Payoff Matrix | MobiQuest: H | MobiQuest: L |
 | --- | --- | --- |
-| **TechNova: H** | (70, 70)
-
- | (40, 85)
-
- |
-| **TechNova: L** | (85, 40)
-
- | (55, 55)
-
- |
+| **TechNova: H** | (70, 70) | (40, 85) |
+| **TechNova: L** | (85, 40) | (55, 55) |
 
 
 * **(a)** Identify each firm's best response to the rival's pricing strategy. Show your reasoning using the payoff table.
@@ -276,42 +244,15 @@ Here are all the questions for **Principles of Economics** found in the provided
 
 
 * **Dataset (per week):**
-| Output (kg)
 
- | Total Cost (₹)
-
- |
+| Output (kg) | Total Cost (₹) |
 | --- | --- |
-| 0
-
- | 12,000
-
- |
-| 10
-
- | 18,000
-
- |
-| 20
-
- | 24,000
-
- |
-| 30
-
- | 29,000
-
- |
-| 40
-
- | 35,000
-
- |
-| 50
-
- | 43,000
-
- |
+| 0 | 12,000 |
+| 10 | 18,000 |
+| 20 | 24,000 |
+| 30 | 29,000 |
+| 40 | 35,000 |
+| 50 | 43,000 |
 
 
 * **(a)** Calculate the following at each positive output level (10 to 50 kg):
