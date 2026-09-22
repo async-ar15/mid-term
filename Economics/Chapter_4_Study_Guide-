@@ -1,0 +1,134 @@
+# Chapter 4: The Market Forces of Supply and Demand (Study Guide)
+
+## Concept 1: Demand Curve Shifters
+The Demand curve shows the relationship between price and quantity demanded, assuming other things remain constant. A shift in the demand curve means at any given price, the quantity demanded has changed.
+- **Income:** 
+  - Normal goods: Income increases -> Demand shifts right.
+  - Inferior goods: Income increases -> Demand shifts left.
+- **Prices of Related Goods:**
+  - **Substitutes:** Goods used in place of one another (e.g., Coke and Pepsi). If price of Substitute A increases, Demand for B shifts right.
+  - **Complements:** Goods used together (e.g., Hot dogs and buns). If price of Complement A increases, Demand for B shifts left.
+- **Tastes:** If a good becomes popular due to trends or news, demand shifts right.
+- **Expectations:** If buyers expect prices to rise in the future or their income to increase, current demand shifts right.
+- **Number of Buyers:** More buyers -> Demand shifts right.
+
+## Concept 2: Supply Curve Shifters
+The Supply curve shows the relationship between price and quantity supplied, assuming other things remain constant.
+- **Input Prices:** Wages, raw materials. If input prices increase, production costs rise -> Supply shifts left.
+- **Technology:** Improvements in technology reduce production costs -> Supply shifts right.
+- **Expectations:** If sellers expect higher prices in the future, they may withhold supply now -> current Supply shifts left.
+- **Number of Sellers:** More sellers -> Supply shifts right.
+
+## Concept 3: Market Equilibrium and Simultaneous Shifts
+- **Equilibrium:** Where quantity supplied = quantity demanded (intersection of Supply and Demand curves).
+- **Surplus:** Price is above equilibrium (Quantity Supplied > Quantity Demanded). Sellers must cut prices to sell their goods, so price falls.
+- **Shortage:** Price is below equilibrium (Quantity Demanded > Quantity Supplied). Buyers compete for limited goods, so price rises.
+- **Three-step process for analyzing changes:**
+  1. Decide whether the event shifts the Supply curve, Demand curve, or both.
+  2. Decide in which direction the curve shifts.
+  3. Use the supply-and-demand diagram to see how the shift changes equilibrium Price (P) and Quantity (Q).
+- **Simultaneous Shifts:** When both curves shift, the effect on either Price or Quantity will be ambiguous (uncertain) because it depends on the relative size of the shifts, while the effect on the other will be certain.
+
+---
+
+## Solved Question: PYQ Q4
+> **Question:** Beer and pizza are complements because they are often enjoyed together. When the price of beer rises, what happens to the supply, demand, quantity supplied, quantity demanded, and price in the market for pizza?
+
+**Step-by-Step Solution:**
+1. **Identify the event:** Price of beer rises. Beer and pizza are complements.
+2. **Shift:** The price of a related good is a Demand shifter. Because they are complements, an increase in the price of beer means people buy less beer, and therefore they demand less pizza. Demand shifts **LEFT**. (The Supply curve of pizza does not shift).
+3. **Effects:** 
+   - **Demand:** Decreases (shifts left).
+   - **Supply:** Unchanged (the curve doesn't shift).
+   - **Price:** Falls (due to the leftward shift in demand).
+   - **Quantity Demanded:** Decreases (because the curve shifted left).
+   - **Quantity Supplied:** Decreases (this is a movement *along* the supply curve to the new lower equilibrium point).
+
+---
+
+## Solved Question: PYQ Q5
+> **Question:** Over the past 20 years, the cost of solar panels has fallen sharply due to advances in production technology. How do you think this has affected the market for electricity from solar power? For coal-based electricity? For solar installation services?
+
+**Step-by-Step Solution:**
+1. **Market for electricity from solar power:** 
+   - Event: Advanced technology reduces the production cost of solar panels.
+   - Shift: Supply of solar electricity shifts **RIGHT** (due to lower technology/input costs).
+   - Result: Price of solar electricity FALLS, Quantity INCREASES.
+2. **Market for coal-based electricity:**
+   - Event: The price of solar electricity (a substitute for coal electricity) has fallen.
+   - Shift: Demand for coal-based electricity shifts **LEFT**.
+   - Result: Price of coal electricity FALLS, Quantity DECREASES.
+3. **Market for solar installation services:**
+   - Event: The quantity of solar panels sold has increased (they are complements to installation services).
+   - Shift: Demand for installation services shifts **RIGHT**.
+   - Result: Price of installation services RISES, Quantity INCREASES.
+
+---
+
+## Solved Question: PYQ Q6
+> **Question:** Consider the markets for streaming subscriptions (like Netflix), smart TVs, and movie theatre tickets.
+> a. For each pair, identify whether they are complements or substitutes.
+> b. Suppose a technological advance reduces the cost of manufacturing smart TVs. Draw a diagram to show what happens in the market for smart TVs.
+> c. Draw two more diagrams to show how the change in the market for smart TVs affects the markets for streaming subscriptions and movie tickets.
+
+**Step-by-Step Solution:**
+**Part a:**
+- Streaming subscriptions and smart TVs: **Complements** (you buy a smart TV to watch streaming services).
+- Streaming subscriptions and movie tickets: **Substitutes** (you can watch a movie at home or go to the theatre).
+- Smart TVs and movie tickets: **Substitutes** (buying a smart TV reduces the need to go out for movies).
+
+**Part b (Market for Smart TVs):**
+- Shift: A technological advance means Supply of Smart TVs shifts **RIGHT**. 
+- Result: Equilibrium Price FALLS, Equilibrium Quantity RISES.
+
+**Part c (Related Markets):**
+- **Market for Streaming Subscriptions:** Since they are complements to Smart TVs, the lower price of Smart TVs means people will buy more TVs, and therefore want more streaming services. Demand for streaming shifts **RIGHT**. Price RISES, Quantity RISES.
+- **Market for Movie Tickets:** Since they are substitutes for Smart TVs, the lower price of Smart TVs causes people to switch away from movie tickets to home entertainment. Demand for movie tickets shifts **LEFT**. Price FALLS, Quantity DECREASES.
+
+---
+
+## Solved Question: PYQ Q7
+> **Question:** Consider the following events: Scientists reveal that eating oranges decreases the risk of diabetes, and at the same time, farmers use a new fertilizer that makes orange trees produce more oranges. Illustrate and explain what effect these changes have on the equilibrium price and quantity of oranges.
+
+**Step-by-Step Solution:**
+This is a simultaneous shift problem! Let's break it down:
+1. **Event 1:** Health benefits revealed. This changes consumer Tastes. Demand shifts **RIGHT**. This pushes Price UP and Quantity UP.
+2. **Event 2:** New fertilizer. This is a Technology/Input improvement. Supply shifts **RIGHT**. This pushes Price DOWN and Quantity UP.
+
+**Combine the effects:**
+- **Quantity:** Both shifts cause Quantity to rise. So, **Equilibrium Quantity unambiguously INCREASES**.
+- **Price:** Demand shifting right pushes Price UP. Supply shifting right pushes Price DOWN. Since we don't know the exact magnitude of the shifts, the **effect on Equilibrium Price is AMBIGUOUS (uncertain)**.
+
+---
+
+## Solved Question: Active Learning 1 (Demand curve shifts)
+> **Question:** Draw a demand curve for music downloads. What happens to it in each of the following scenarios? Why?
+> A. The price of iPods falls
+> B. The price of music downloads falls
+> C. The price of music CDs falls
+
+**Step-by-Step Solution:**
+- **A. The price of iPods falls:** iPods and music downloads are complements. A fall in the price of iPods increases the demand for music downloads. The Demand curve shifts **RIGHT**.
+- **B. The price of music downloads falls:** This is a change in the price of the good itself! This does NOT shift the demand curve. Instead, it causes a **movement along** the demand curve to a point with a lower price and a higher quantity demanded.
+- **C. The price of music CDs falls:** CDs and music downloads are substitutes. A fall in the price of CDs means people will buy more CDs and fewer downloads. The Demand curve shifts **LEFT**.
+
+![The price of iPods falls](C:/Users/iaman/.gemini/antigravity-ide/brain/cda878ef-653f-435a-89e0-fb5e5ab35aed/images/ch4_al1_a.png)
+![The price of music downloads falls](C:/Users/iaman/.gemini/antigravity-ide/brain/cda878ef-653f-435a-89e0-fb5e5ab35aed/images/ch4_al1_b.png)
+![The price of music CDs falls](C:/Users/iaman/.gemini/antigravity-ide/brain/cda878ef-653f-435a-89e0-fb5e5ab35aed/images/ch4_al1_c.png)
+
+---
+
+## Solved Question: Active Learning 2 (Supply curve shifts)
+> **Question:** Draw a supply curve for tax return preparation software. What happens to it in each of the following scenarios?
+> A. Retailers cut the price of the software.
+> B. A technological advance allows the software to be produced at lower cost.
+> C. Professional tax return preparers raise the price of the services they provide.
+
+**Step-by-Step Solution:**
+- **A. Retailers cut the price of the software:** This is a change in the price of the good itself. This does NOT shift the supply curve. It causes a **movement along** the supply curve to a point with a lower price and lower quantity supplied.
+- **B. A technological advance:** This reduces the cost of production. The Supply curve shifts **RIGHT**.
+- **C. Professional tax return preparers raise the price of the services they provide:** This is a trick question! Professional preparers are a *substitute* for tax software. If they raise their prices, people will want to buy more software instead. This shifts the **Demand** curve for tax software to the right, not the Supply curve. The Supply curve does not shift.
+
+![Retailers cut the price](C:/Users/iaman/.gemini/antigravity-ide/brain/cda878ef-653f-435a-89e0-fb5e5ab35aed/images/ch4_al2_a.png)
+![Fall in cost of producing software](C:/Users/iaman/.gemini/antigravity-ide/brain/cda878ef-653f-435a-89e0-fb5e5ab35aed/images/ch4_al2_b.png)
+![Professional preparers raise their price](C:/Users/iaman/.gemini/antigravity-ide/brain/cda878ef-653f-435a-89e0-fb5e5ab35aed/images/ch4_al2_c.png)
