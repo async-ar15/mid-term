@@ -1,0 +1,109 @@
+# Chapter 5: Elasticity and Its Application (Study Guide)
+
+## Concept 1: Price Elasticity of Demand
+Price elasticity of demand measures how much the quantity demanded responds to a change in price.
+- **Elastic:** Quantity demanded responds strongly to price changes (Elasticity > 1).
+- **Inelastic:** Quantity demanded responds slightly to price changes (Elasticity < 1).
+
+**Determinants of Price Elasticity of Demand:**
+- **Necessities vs. Luxuries:** Necessities are inelastic (you have to buy them regardless of price, like insulin). Luxuries are elastic (you can skip them if price rises, like yachts).
+- **Time Horizon:** Goods tend to have more elastic demand over longer time horizons. In the short run, you can't easily change habits (e.g., gas for commuting). In the long run, you can adapt (buy a hybrid car, move closer to work).
+- **Availability of Close Substitutes:** Goods with close substitutes are more elastic because buyers can easily switch (e.g., Breakfast cereal vs. Sunscreen).
+- **Definition of the Market:** Narrowly defined markets are more elastic than broadly defined markets. (e.g., "Blue jeans" are very elastic because you can buy khakis instead. "Clothing" is inelastic because you must wear clothes).
+
+## Concept 2: The Midpoint (Arc) Method Formula
+The standard way to calculate percentage changes gives different answers depending on if the price goes up or down. The Midpoint method fixes this by dividing the change by the average (midpoint) of the start and end values.
+
+**Formula:**
+Price Elasticity of Demand = (% Change in Quantity Demanded) / (% Change in Price)
+Where:
+- % Change in Quantity = (Q2 - Q1) / ((Q2 + Q1) / 2)
+- % Change in Price = (P2 - P1) / ((P2 + P1) / 2)
+*Note: We usually drop the negative sign and report demand elasticity as a positive number.*
+
+## Concept 3: The Total Revenue Test
+Total Revenue (TR) = Price x Quantity (P x Q).
+How a price change affects total revenue depends on the elasticity of demand:
+- **If Demand is Inelastic (E < 1):** Price and Total Revenue move in the SAME direction. (If Price goes up, TR goes up. The higher price more than makes up for the few lost sales).
+- **If Demand is Elastic (E > 1):** Price and Total Revenue move in OPPOSITE directions. (If Price goes up, TR goes down. The higher price causes a massive drop in sales, destroying revenue).
+- **If Demand is Unit Elastic (E = 1):** Total Revenue remains constant when price changes.
+
+---
+
+## Solved Question: PYQ Q8
+> **Question:** For each of the following pairs of goods, which good would you expect to have more elastic demand and why?
+> a. required textbooks or mystery novels
+> b. iPhones vs. smartphones in general
+> c. Netflix subscription vs. streaming services in general
+> d. Coffee today vs. coffee over the next two years
+
+**Step-by-Step Solution:**
+- **a. Required textbooks or mystery novels:** **Mystery novels** are more elastic. Required textbooks are a necessity for a class, making them inelastic. Mystery novels are a luxury and have many substitutes (other books, movies).
+- **b. iPhones vs. smartphones in general:** **iPhones** are more elastic. This is based on market definition. "iPhones" is narrowly defined and has close substitutes (Samsung, Google Pixel). "Smartphones in general" is broadly defined; most people view having a smartphone as a necessity today.
+- **c. Netflix subscription vs. streaming services in general:** **Netflix subscription** is more elastic. Narrowly defined markets have more substitutes (Hulu, Disney+) compared to the broader category of "streaming services".
+- **d. Coffee today vs. coffee over the next two years:** **Coffee over the next two years** is more elastic. This is based on the time horizon. It is hard to give up coffee today (short run, inelastic), but over two years, you have time to switch to tea or energy drinks (long run, more elastic).
+
+---
+
+## Solved Question: PYQ Q9
+> **Question:** The weekly demand schedule for online movie rentals in a city is given below:
+> Price: 60, Q: 20
+> Price: 50, Q: 30
+> Price: 40, Q: 45
+> Price: 30, Q: 70
+> a. Using the midpoint (arc) method, calculate the price elasticity of demand between: i) 60 and 50, ii) 50 and 40, iii) 40 and 30.
+> b. For each range, classify demand as elastic, inelastic, or unit elastic.
+> c. Compute total revenue (TR = P x Q) at each price level. Based on your elasticity results, explain how elasticity is related to changes in total revenue.
+> d. Draw a well-labelled demand curve diagram, marking the three segments clearly.
+
+**Step-by-Step Solution:**
+**Part a & b: Midpoint Method Calculations**
+*i) Between 60 and 50:*
+- P1 = 60, P2 = 50. Midpoint P = 55. Change in P = 10. % change in P = 10 / 55 = 0.1818 (18.18%)
+- Q1 = 20, Q2 = 30. Midpoint Q = 25. Change in Q = 10. % change in Q = 10 / 25 = 0.40 (40%)
+- Elasticity = 40% / 18.18% = **2.2**. (Since 2.2 > 1, demand is **Elastic**).
+
+*ii) Between 50 and 40:*
+- P1 = 50, P2 = 40. Midpoint P = 45. Change in P = 10. % change in P = 10 / 45 = 0.2222 (22.22%)
+- Q1 = 30, Q2 = 45. Midpoint Q = 37.5. Change in Q = 15. % change in Q = 15 / 37.5 = 0.40 (40%)
+- Elasticity = 40% / 22.22% = **1.8**. (Since 1.8 > 1, demand is **Elastic**).
+
+*iii) Between 40 and 30:*
+- P1 = 40, P2 = 30. Midpoint P = 35. Change in P = 10. % change in P = 10 / 35 = 0.2857 (28.57%)
+- Q1 = 45, Q2 = 70. Midpoint Q = 57.5. Change in Q = 25. % change in Q = 25 / 57.5 = 0.4347 (43.47%)
+- Elasticity = 43.47% / 28.57% = **1.52**. (Since 1.52 > 1, demand is **Elastic**).
+
+**Part c: Total Revenue**
+- At P = 60, Q = 20. TR = 60 * 20 = **1200**.
+- At P = 50, Q = 30. TR = 50 * 30 = **1500**.
+- At P = 40, Q = 45. TR = 40 * 45 = **1800**.
+- At P = 30, Q = 70. TR = 30 * 70 = **2100**.
+*Explanation:* In all three ranges, demand is elastic (E > 1). When demand is elastic, price and total revenue move in opposite directions. Here, as the price falls from 60 to 30, the total revenue consistently increases (from 1200 to 2100). The increase in quantity demanded more than offsets the drop in price.
+
+**Part d: Demand Curve**
+*(Since I cannot physically draw, here is how you should draw it on paper)*
+- Draw a graph with Price (30 to 60) on the Y-axis and Quantity (20 to 70) on the X-axis. 
+- Plot the 4 points: (20, 60), (30, 50), (45, 40), (70, 30).
+- Connect them with a downward-sloping curve.
+- Label the segment between P=60 and P=50 as "E = 2.2", between P=50 and P=40 as "E = 1.8", and between P=40 and P=30 as "E = 1.52". All segments are elastic.
+
+---
+
+## Solved Question: Active Learning 1 (PDF Slides)
+> **Question:** Use the following information to calculate the price elasticity of demand for iPhones using the midpoint method:
+> If P = 400, Qd = 10,600
+> If P = 600, Qd = 8,400
+
+**Step-by-Step Solution:**
+1. **Find % Change in Price:**
+   - Change in P = 600 - 400 = 200
+   - Midpoint of P = (600 + 400) / 2 = 500
+   - % Change in P = 200 / 500 = 0.40 = **40%**
+2. **Find % Change in Quantity:**
+   - Change in Q = 10,600 - 8,400 = 2,200
+   - Midpoint of Q = (10,600 + 8,400) / 2 = 9,500
+   - % Change in Q = 2,200 / 9,500 = 0.2316 = **23.16%**
+3. **Calculate Elasticity:**
+   - Elasticity = (% Change in Q) / (% Change in P)
+   - Elasticity = 23.16% / 40% = **0.58**
+   - *(Because 0.58 < 1, the demand for iPhones in this specific scenario is Inelastic).*

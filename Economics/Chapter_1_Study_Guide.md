@@ -1,0 +1,67 @@
+# Chapter 1: Ten Principles of Economics (Study Guide)
+
+## Concept 1: Opportunity Cost (Principle 2)
+**Definition:** The cost of something is what you give up to get it. 
+
+When you make any decision in economics, you must look at the **Total Opportunity Cost**, which consists of two things:
+1. **Explicit Costs:** The actual cash out-of-pocket expenses (e.g., buying a ticket, paying tuition).
+2. **Implicit Costs:** The value of what you gave up to do the activity (e.g., the wages you *could have earned* if you were working instead).
+
+**Important Rule:** Do NOT include things you would have had to pay for anyway! For example, if you go to college, you shouldn't count your normal food or rent as a cost of college, because you would still have to eat and pay rent even if you were just working. 
+
+---
+
+## Solved Question: PYQ Q1
+> **Question:** Divya quits her job, which pays $30,000 a year, to finish her college degree. Her annual college expenses are $10,000 for tuition, $2,000 for books, and $700 for food. What is her opportunity cost of attending college for the year?
+
+**Step-by-Step Solution:**
+1. **Identify the Implicit Cost:** What is Divya giving up by going to college? She had to quit her job, so she is giving up her salary.
+   - *Implicit Cost = $30,000*
+2. **Identify the Explicit Costs:** What is she paying out-of-pocket specifically for college?
+   - Tuition = $10,000
+   - Books = $2,000
+   - *Total Explicit Cost = $12,000*
+3. **What about the food?** The $700 for food is a **trap**! Divya has to eat whether she goes to college or works. Because it is not an *extra* cost caused by college, it is ignored in the opportunity cost calculation.
+4. **Calculate Total Opportunity Cost:**
+   - Total Opportunity Cost = Implicit Costs + Explicit Costs
+   - Total Opportunity Cost = $30,000 + $12,000 = **$42,000**
+
+**Final Answer:** Divya's opportunity cost of attending college is **$42,000**.
+
+---
+
+## Concept 2: Rational People Think at the Margin (Principle 3)
+**Definition:** People make decisions by comparing **Marginal Benefits (MB)** to **Marginal Costs (MC)**. 
+- *Marginal* means "one additional unit" or "the next step."
+- You should only take an action if the **Marginal Benefit > Marginal Cost**.
+
+**The Sunk Cost Fallacy:** 
+A sunk cost is money that has already been spent and cannot be recovered. **Rational people ignore sunk costs.** When making a decision about what to do next, you only look at the *future* costs (Marginal Cost) and the *future* benefits (Marginal Benefit).
+
+---
+
+## Solved Question: Active Learning 1 (PDF Slides)
+> **Question:** You are selling your 2007 Mustang. You have already spent $1,000 on repairs. At the last minute, the transmission dies. You can pay $900 to have it repaired, or sell the car “as is.” 
+> 
+> **A.** Blue book value (what you could get for the car) is $7,500 if transmission works, $6,200 if it doesn't.
+> **B.** Blue book value is $6,300 if transmission works, $5,500 if it doesn't.
+> Should you fix the transmission in each scenario?
+
+**Step-by-Step Solution:**
+*First, identify the Sunk Cost:* The $1,000 you already spent on repairs is gone. You cannot get it back. Ignore it completely for your math!
+*Identify the Marginal Cost (MC):* The cost to fix the transmission right now is **$900**.
+
+**Scenario A:**
+1. **Find Marginal Benefit (MB):** How much *extra* money do you make by fixing it?
+   - MB = (Value if fixed) - (Value if broken)
+   - MB = $7,500 - $6,200 = **$1,300**
+2. **Compare MB and MC:**
+   - Marginal Benefit ($1,300) > Marginal Cost ($900)
+3. **Answer for A:** **Yes**, you should get the transmission fixed. You spend $900, but the value of the car goes up by $1,300, giving you a net gain of $400.
+
+**Scenario B:**
+1. **Find Marginal Benefit (MB):** 
+   - MB = $6,300 - $5,500 = **$800**
+2. **Compare MB and MC:**
+   - Marginal Benefit ($800) < Marginal Cost ($900)
+3. **Answer for B:** **No**, do not pay $900 to fix it. You would spend $900 just to increase the car's value by $800, meaning you would lose $100 on the repair. Sell it "as is."
