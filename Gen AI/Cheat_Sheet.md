@@ -34,7 +34,9 @@ This is a high-yield, quick-revision cheat sheet covering the core concepts, for
 ### Variational Inference & ELBO
 * The true posterior $p(z|x)$ is intractable. We approximate it with the encoder $q(z|x)$.
 * **ELBO (Evidence Lower Bound):** 
-  $$\log p(x) \ge \underbrace{\mathbb{E}_{q(z|x)}[\log p(x|z)]}_{\text{Reconstruction}} - \underbrace{D_{KL}(q(z|x) || p(z))}_{\text{Regularization}}$$
+  $$
+  \log p(x) \ge \underbrace{\mathbb{E}_{q(z|x)}[\log p(x|z)]}_{\text{Reconstruction}} - \underbrace{D_{KL}(q(z|x) || p(z))}_{\text{Regularization}}
+  $$
 * Minimizing the KL divergence between our approximation and the true posterior ($D_{KL}(q||p)$) **maximizes the ELBO**.
 
 ### The Reparameterization Trick

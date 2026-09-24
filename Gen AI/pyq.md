@@ -87,7 +87,9 @@ Considering the above, solve the following questions: **[10 Marks]**
 * **Q3:** Explain the complete training and sampling pipeline of a diffusion model. A Denoising Diffusion Probabilistic Model (DDPM) is defined by a forward noising process:
 
 
-$$q(x_t \vert{} x_{t-1}) = \mathcal{N}(x_t; \sqrt{1 - \beta_t}x_{t-1}, \beta_t \mathbf{I})$$
+$$
+q(x_t \vert{} x_{t-1}) = \mathcal{N}(x_t; \sqrt{1 - \beta_t}x_{t-1}, \beta_t \mathbf{I})
+$$
 
 
 

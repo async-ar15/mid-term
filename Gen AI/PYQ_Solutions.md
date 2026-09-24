@@ -14,7 +14,9 @@ Generative Adversarial Networks (GANs) consist of two neural networks, a Generat
 
 **2. Min-Max Optimization Problem:**
 The training is expressed as a minimax game with the value function $V(G,D)$:
-$$\min_G \max_D V(G, D) = \mathbb{E}_{x \sim p_{data}}[\log D(x)] + \mathbb{E}_{z \sim p_z}[\log(1 - D(G(z)))]$$
+$$
+\min_G \max_D V(G, D) = \mathbb{E}_{x \sim p_{data}}[\log D(x)] + \mathbb{E}_{z \sim p_z}[\log(1 - D(G(z)))]
+$$
 **Justification:** 
 * The Discriminator wants to maximize $V(G,D)$. It pushes $D(x) \to 1$ (making $\log D(x) \to 0$) and $D(G(z)) \to 0$ (making $\log(1 - D(G(z))) \to 0$).
 * The Generator wants to minimize $V(G,D)$. It has no control over the first term, but it wants $D(G(z)) \to 1$ (fooling the discriminator), which drives $\log(1 - D(G(z))) \to -\infty$. 
@@ -100,12 +102,16 @@ $\beta_t \in (0, 1)$ is the variance schedule for the diffusion model. It dictat
 **B. Markov Process and $x_T$ Convergence:**
 The forward process is a Markov chain because the state $x_t$ depends *only* on the immediately preceding state $x_{t-1}$, defined by $q(x_t|x_{t-1}) = \mathcal{N}(x_t; \sqrt{1 - \beta_t}x_{t-1}, \beta_t \mathbf{I})$. 
 Using the reparameterization trick, we define $\alpha_t = 1 - \beta_t$ and $\bar{\alpha}_t = \prod_{i=1}^t \alpha_i$, allowing us to sample $x_t$ directly from $x_0$:
-$$x_t = \sqrt{\bar{\alpha}_t}x_0 + \sqrt{1 - \bar{\alpha}_t}\epsilon$$
+$$
+x_t = \sqrt{\bar{\alpha}_t}x_0 + \sqrt{1 - \bar{\alpha}_t}\epsilon
+$$
 As $t \to T$, because each $\alpha_i < 1$, the infinite product $\bar{\alpha}_T \to 0$. Therefore, the mean term $\sqrt{\bar{\alpha}_T}x_0 \to 0$ and the variance term $(1 - \bar{\alpha}_T) \to 1$. The state $x_T$ perfectly converges to pure Gaussian noise $\mathcal{N}(0, \mathbf{I})$, entirely destroying $x_0$.
 
 **C. Generative Process $p_\theta$ and VAE relation:**
 The generative process reverses the Markov chain, using a neural network to estimate the parameters:
-$$p_\theta(x_{t-1}|x_t) = \mathcal{N}(x_{t-1}; \mu_\theta(x_t, t), \Sigma_\theta(x_t, t))$$
+$$
+p_\theta(x_{t-1}|x_t) = \mathcal{N}(x_{t-1}; \mu_\theta(x_t, t), \Sigma_\theta(x_t, t))
+$$
 **Relation to VAE:** A diffusion model can be viewed as a hierarchical, very deep VAE with $T$ latent layers. The forward noising process acts as a fixed, parameter-free encoder $q$, and the reverse denoising process acts as a highly expressive decoder $p_\theta$. Like a VAE, diffusion models are trained by maximizing the Evidence Lower Bound (ELBO) over these $T$ layers.
 
 **D. SDE Representation:**
@@ -124,7 +130,9 @@ The standard Denoising Diffusion Probabilistic Model (DDPM) is slow because it s
 **B. High-Resolution Conditional Generation:**
 * **High-Resolution (Latent Diffusion):** Running a U-Net on a massive pixel grid (e.g., 1024x1024) for 1000 steps is computationally intractable. Latent Diffusion Models (LDMs) solve this by using a pre-trained VAE encoder to compress the image into a small, dense latent space. The entire diffusion (noising/denoising) process is executed in this cheap latent space. Finally, a VAE decoder projects the generated latent vector back into high-resolution pixel space.
 * **Conditional Generation (Classifier-Free Guidance):** To strongly align generation with a text condition $c$, the model is trained jointly with the condition $\epsilon_\theta(x_t, c)$ and without the condition $\epsilon_\theta(x_t, \emptyset)$ (by dropping the text prompt 10% of the time during training). During sampling, the final noise prediction is extrapolated away from the unconditional prediction: 
-  $$\hat{\epsilon} = \epsilon_\theta(x_t, \emptyset) + w \cdot (\epsilon_\theta(x_t, c) - \epsilon_\theta(x_t, \emptyset))$$ 
+  $$
+  \hat{\epsilon} = \epsilon_\theta(x_t, \emptyset) + w \cdot (\epsilon_\theta(x_t, c) - \epsilon_\theta(x_t, \emptyset))
+  $$
   This pushes the generation heavily toward the text prompt without needing an external classifier network.
 
 ---
